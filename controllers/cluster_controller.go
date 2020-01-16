@@ -90,6 +90,7 @@ func (r *ClusterReconciler) SetupWithManager(mgr ctrl.Manager, options controlle
 func (r *ClusterReconciler) Reconcile(req ctrl.Request) (_ ctrl.Result, reterr error) {
 	ctx := context.Background()
 	logger := r.Log.WithValues("cluster", req.Name, "namespace", req.Namespace)
+	logger.Info("this is a not a test log message")
 
 	// Fetch the Cluster instance.
 	cluster := &clusterv1.Cluster{}
